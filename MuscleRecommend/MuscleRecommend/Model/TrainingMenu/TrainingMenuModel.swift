@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-// 筋トレメニューモデル
+// 筋トレメニューのモデル
 class TrainingMenuModel: Object {
     
     // 筋トレメニューid
@@ -35,17 +35,17 @@ extension TrainingMenuModel {
     private static let realm = try! Realm()
 
     // 一覧取得
-    func selectTrainingMenuList() -> Results<TrainingMenuModel>? {
+    func selectTrainingMenuList() -> Results<TrainingMenuModel> {
         return TrainingMenuModel.realm.objects(TrainingMenuModel.self)
     }
 
     // 筋トレメニューを追加
-    func insertTrainingMenuModel(trainingMenuName: String) {
+    func insertTrainingMenuModel(trainingMenuModel: TrainingMenuModel) {
         // 追加する筋トレメニューの設定
-        let trainingMenuModel = TrainingMenuModel()
-        trainingMenuModel.trainingMenuName = trainingMenuName
+//        let trainingMenuModel = TrainingMenuModel()
+//        trainingMenuModel.trainingMenuName = trainingMenuName
         try! TrainingMenuModel.realm.write {
-            TrainingMenuModel.realm.add(TrainingMenuModel(value: trainingMenuModel))
+            TrainingMenuModel.realm.add(trainingMenuModel)
         }
     }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct MuscleRecommendApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TrainingMenuView()
         }
     }
 }
