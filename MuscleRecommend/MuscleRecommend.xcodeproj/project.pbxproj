@@ -95,6 +95,9 @@
 		6B1B52F526C90BCE00022640 /* MuscleRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				6B1B536126C9157600022640 /* Model */,
+				6B1B536226C9158100022640 /* ViewModel */,
+				6B1B536026C9156800022640 /* View */,
 				6B1B52F626C90BCE00022640 /* MuscleRecommendApp.swift */,
 				6B1B52F826C90BCE00022640 /* ContentView.swift */,
 				6B1B52FA26C90BCE00022640 /* Assets.xcassets */,
@@ -128,6 +131,27 @@
 				6B1B531526C90BCF00022640 /* Info.plist */,
 			);
 			path = MuscleRecommendUITests;
+			sourceTree = "<group>";
+		};
+		6B1B536026C9156800022640 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B1B536126C9157600022640 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B1B536226C9158100022640 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
