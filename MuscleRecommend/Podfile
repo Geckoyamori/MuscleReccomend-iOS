@@ -15,5 +15,7 @@ target 'MuscleRecommend' do
   target 'MuscleRecommendUITests' do
     # Pods for testing
   end
+  
+pod 'RealmSwift'
 
 end

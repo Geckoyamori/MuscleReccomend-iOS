@@ -3,16 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E9D04F7CF8D63C1D83A659D /* Pods_MuscleRecommendTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE65668DAA9C045170015A04 /* Pods_MuscleRecommendTests.framework */; };
 		6B1B52F726C90BCE00022640 /* MuscleRecommendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B52F626C90BCE00022640 /* MuscleRecommendApp.swift */; };
 		6B1B52F926C90BCE00022640 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B52F826C90BCE00022640 /* ContentView.swift */; };
 		6B1B52FB26C90BCE00022640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B52FA26C90BCE00022640 /* Assets.xcassets */; };
 		6B1B52FE26C90BCE00022640 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B52FD26C90BCE00022640 /* Preview Assets.xcassets */; };
 		6B1B530926C90BCF00022640 /* MuscleRecommendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B530826C90BCF00022640 /* MuscleRecommendTests.swift */; };
 		6B1B531426C90BCF00022640 /* MuscleRecommendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B531326C90BCF00022640 /* MuscleRecommendUITests.swift */; };
+		6B1B536726C9166900022640 /* TrainingMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B536626C9166900022640 /* TrainingMenuModel.swift */; };
+		7342F6173EE5592E3C92A6F3 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51AF4E54F260BF13268E311 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */; };
+		EAB3C1964812B171A16AAE0D /* Pods_MuscleRecommend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683C010BD498FB3C51291FCD /* Pods_MuscleRecommend.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15AB4CF03D1991191CA552C3 /* Pods-MuscleRecommend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend.debug.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend/Pods-MuscleRecommend.debug.xcconfig"; sourceTree = "<group>"; };
+		2BEEBEE29BA3EBEDCEE8C513 /* Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend-MuscleRecommendUITests/Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CE4D0F63D35FD2E3C31D18C /* Pods-MuscleRecommendTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommendTests.debug.xcconfig"; path = "Target Support Files/Pods-MuscleRecommendTests/Pods-MuscleRecommendTests.debug.xcconfig"; sourceTree = "<group>"; };
+		683C010BD498FB3C51291FCD /* Pods_MuscleRecommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1B52F326C90BCE00022640 /* MuscleRecommend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleRecommend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1B52F626C90BCE00022640 /* MuscleRecommendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleRecommendApp.swift; sourceTree = "<group>"; };
 		6B1B52F826C90BCE00022640 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +53,14 @@
 		6B1B530F26C90BCF00022640 /* MuscleRecommendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleRecommendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1B531326C90BCF00022640 /* MuscleRecommendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleRecommendUITests.swift; sourceTree = "<group>"; };
 		6B1B531526C90BCF00022640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B1B536626C9166900022640 /* TrainingMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMenuModel.swift; sourceTree = "<group>"; };
+		6B56A3B326C91D1400CAD432 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B56A3B726C91D1800CAD432 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8F56C7CF4DB31F0859A7B48 /* Pods-MuscleRecommendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommendTests.release.xcconfig"; path = "Target Support Files/Pods-MuscleRecommendTests/Pods-MuscleRecommendTests.release.xcconfig"; sourceTree = "<group>"; };
+		B51AF4E54F260BF13268E311 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommend_MuscleRecommendUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE65668DAA9C045170015A04 /* Pods_MuscleRecommendTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommendTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C622EFEAFA323CE0D7DA2F7D /* Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend-MuscleRecommendUITests/Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D42642FE324D6EF6FAB26A1E /* Pods-MuscleRecommend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend.release.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend/Pods-MuscleRecommend.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB3C1964812B171A16AAE0D /* Pods_MuscleRecommend.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9D04F7CF8D63C1D83A659D /* Pods_MuscleRecommendTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7342F6173EE5592E3C92A6F3 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +98,8 @@
 				6B1B530726C90BCE00022640 /* MuscleRecommendTests */,
 				6B1B531226C90BCF00022640 /* MuscleRecommendUITests */,
 				6B1B52F426C90BCE00022640 /* Products */,
+				E41351FF70B695533C94B9EC /* Pods */,
+				DCD58C11C2111A4B6D1A2788 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +164,7 @@
 		6B1B536126C9157600022640 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B1B536626C9166900022640 /* TrainingMenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +176,31 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DCD58C11C2111A4B6D1A2788 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B56A3B726C91D1800CAD432 /* RealmSwift.framework */,
+				6B56A3B326C91D1400CAD432 /* Realm.framework */,
+				683C010BD498FB3C51291FCD /* Pods_MuscleRecommend.framework */,
+				B51AF4E54F260BF13268E311 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */,
+				BE65668DAA9C045170015A04 /* Pods_MuscleRecommendTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E41351FF70B695533C94B9EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15AB4CF03D1991191CA552C3 /* Pods-MuscleRecommend.debug.xcconfig */,
+				D42642FE324D6EF6FAB26A1E /* Pods-MuscleRecommend.release.xcconfig */,
+				2BEEBEE29BA3EBEDCEE8C513 /* Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig */,
+				C622EFEAFA323CE0D7DA2F7D /* Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig */,
+				5CE4D0F63D35FD2E3C31D18C /* Pods-MuscleRecommendTests.debug.xcconfig */,
+				A8F56C7CF4DB31F0859A7B48 /* Pods-MuscleRecommendTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B1B531826C90BCF00022640 /* Build configuration list for PBXNativeTarget "MuscleRecommend" */;
 			buildPhases = (
+				40B895B1133A4214C0523998 /* [CP] Check Pods Manifest.lock */,
 				6B1B52EF26C90BCE00022640 /* Sources */,
 				6B1B52F026C90BCE00022640 /* Frameworks */,
 				6B1B52F126C90BCE00022640 /* Resources */,
+				C065F82138C6F518714936A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B1B531B26C90BCF00022640 /* Build configuration list for PBXNativeTarget "MuscleRecommendTests" */;
 			buildPhases = (
+				514477E763AAE0500CC2F0A8 /* [CP] Check Pods Manifest.lock */,
 				6B1B530026C90BCE00022640 /* Sources */,
 				6B1B530126C90BCE00022640 /* Frameworks */,
 				6B1B530226C90BCE00022640 /* Resources */,
@@ -196,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B1B531E26C90BCF00022640 /* Build configuration list for PBXNativeTarget "MuscleRecommendUITests" */;
 			buildPhases = (
+				B2CBFFDA5023271E012B32DE /* [CP] Check Pods Manifest.lock */,
 				6B1B530B26C90BCF00022640 /* Sources */,
 				6B1B530C26C90BCF00022640 /* Frameworks */,
 				6B1B530D26C90BCF00022640 /* Resources */,
+				5FA22A4F9BADB344F0EC03DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,12 +330,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40B895B1133A4214C0523998 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleRecommend-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		514477E763AAE0500CC2F0A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleRecommendTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FA22A4F9BADB344F0EC03DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleRecommend-MuscleRecommendUITests/Pods-MuscleRecommend-MuscleRecommendUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleRecommend-MuscleRecommendUITests/Pods-MuscleRecommend-MuscleRecommendUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuscleRecommend-MuscleRecommendUITests/Pods-MuscleRecommend-MuscleRecommendUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2CBFFDA5023271E012B32DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleRecommend-MuscleRecommendUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C065F82138C6F518714936A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleRecommend/Pods-MuscleRecommend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuscleRecommend/Pods-MuscleRecommend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuscleRecommend/Pods-MuscleRecommend-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B1B52EF26C90BCE00022640 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6B1B52F926C90BCE00022640 /* ContentView.swift in Sources */,
+				6B1B536726C9166900022640 /* TrainingMenuModel.swift in Sources */,
 				6B1B52F726C90BCE00022640 /* MuscleRecommendApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +594,7 @@
 		};
 		6B1B531926C90BCF00022640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15AB4CF03D1991191CA552C3 /* Pods-MuscleRecommend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +617,7 @@
 		};
 		6B1B531A26C90BCF00022640 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42642FE324D6EF6FAB26A1E /* Pods-MuscleRecommend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -482,6 +640,7 @@
 		};
 		6B1B531C26C90BCF00022640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CE4D0F63D35FD2E3C31D18C /* Pods-MuscleRecommendTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +663,7 @@
 		};
 		6B1B531D26C90BCF00022640 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8F56C7CF4DB31F0859A7B48 /* Pods-MuscleRecommendTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -526,6 +686,7 @@
 		};
 		6B1B531F26C90BCF00022640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BEEBEE29BA3EBEDCEE8C513 /* Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +707,7 @@
 		};
 		6B1B532026C90BCF00022640 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C622EFEAFA323CE0D7DA2F7D /* Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
