@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08F79F9CDF6DFB57A442814B /* Pods_MuscleRecommend_MuscleRecommendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEFBC3091B0B663B010EE98 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */; };
 		6B1B52F726C90BCE00022640 /* MuscleRecommendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B52F626C90BCE00022640 /* MuscleRecommendApp.swift */; };
 		6B1B52F926C90BCE00022640 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B52F826C90BCE00022640 /* ContentView.swift */; };
 		6B1B52FB26C90BCE00022640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B52FA26C90BCE00022640 /* Assets.xcassets */; };
 		6B1B52FE26C90BCE00022640 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B52FD26C90BCE00022640 /* Preview Assets.xcassets */; };
 		6B1B530926C90BCF00022640 /* MuscleRecommendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B530826C90BCF00022640 /* MuscleRecommendTests.swift */; };
 		6B1B531426C90BCF00022640 /* MuscleRecommendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B531326C90BCF00022640 /* MuscleRecommendUITests.swift */; };
+		6CFC46F871BCC8DC6BB07D05 /* Pods_MuscleRecommend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55434508E28B3F09379E5C47 /* Pods_MuscleRecommend.framework */; };
+		BBAA6E2F93D4E5B3F77C7254 /* Pods_MuscleRecommendTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FA4FF5C11357DE3AB1D284 /* Pods_MuscleRecommendTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000A277FCE95D116FFE2F6B0 /* Pods-MuscleRecommendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommendTests.release.xcconfig"; path = "Target Support Files/Pods-MuscleRecommendTests/Pods-MuscleRecommendTests.release.xcconfig"; sourceTree = "<group>"; };
+		408D66658C33F0201569B0DE /* Pods-MuscleRecommend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend.debug.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend/Pods-MuscleRecommend.debug.xcconfig"; sourceTree = "<group>"; };
+		55434508E28B3F09379E5C47 /* Pods_MuscleRecommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1B52F326C90BCE00022640 /* MuscleRecommend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleRecommend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1B52F626C90BCE00022640 /* MuscleRecommendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleRecommendApp.swift; sourceTree = "<group>"; };
 		6B1B52F826C90BCE00022640 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,12 @@
 		6B1B530F26C90BCF00022640 /* MuscleRecommendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleRecommendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1B531326C90BCF00022640 /* MuscleRecommendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleRecommendUITests.swift; sourceTree = "<group>"; };
 		6B1B531526C90BCF00022640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86FA4FF5C11357DE3AB1D284 /* Pods_MuscleRecommendTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommendTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B127532411C56DE45BC4F639 /* Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend-MuscleRecommendUITests/Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BE0C540ED839BE2E55A5FC28 /* Pods-MuscleRecommend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend.release.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend/Pods-MuscleRecommend.release.xcconfig"; sourceTree = "<group>"; };
+		D4DC4A684713E3497ED52298 /* Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig"; path = "Target Support Files/Pods-MuscleRecommend-MuscleRecommendUITests/Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E92CD8E4FF69DE47DC8BB262 /* Pods-MuscleRecommendTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommendTests.debug.xcconfig"; path = "Target Support Files/Pods-MuscleRecommendTests/Pods-MuscleRecommendTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAEFBC3091B0B663B010EE98 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommend_MuscleRecommendUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CFC46F871BCC8DC6BB07D05 /* Pods_MuscleRecommend.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAA6E2F93D4E5B3F77C7254 /* Pods_MuscleRecommendTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +80,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F79F9CDF6DFB57A442814B /* Pods_MuscleRecommend_MuscleRecommendUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F6241CC5A6259D69859EBBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				408D66658C33F0201569B0DE /* Pods-MuscleRecommend.debug.xcconfig */,
+				BE0C540ED839BE2E55A5FC28 /* Pods-MuscleRecommend.release.xcconfig */,
+				D4DC4A684713E3497ED52298 /* Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig */,
+				B127532411C56DE45BC4F639 /* Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig */,
+				E92CD8E4FF69DE47DC8BB262 /* Pods-MuscleRecommendTests.debug.xcconfig */,
+				000A277FCE95D116FFE2F6B0 /* Pods-MuscleRecommendTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2E8176A523DFB515CC9858DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55434508E28B3F09379E5C47 /* Pods_MuscleRecommend.framework */,
+				FAEFBC3091B0B663B010EE98 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */,
+				86FA4FF5C11357DE3AB1D284 /* Pods_MuscleRecommendTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B1B52EA26C90BCE00022640 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +118,8 @@
 				6B1B530726C90BCE00022640 /* MuscleRecommendTests */,
 				6B1B531226C90BCF00022640 /* MuscleRecommendUITests */,
 				6B1B52F426C90BCE00022640 /* Products */,
+				0F6241CC5A6259D69859EBBB /* Pods */,
+				2E8176A523DFB515CC9858DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B1B531826C90BCF00022640 /* Build configuration list for PBXNativeTarget "MuscleRecommend" */;
 			buildPhases = (
+				DE6D3ECBBD9219B63F7C6413 /* [CP] Check Pods Manifest.lock */,
 				6B1B52EF26C90BCE00022640 /* Sources */,
 				6B1B52F026C90BCE00022640 /* Frameworks */,
 				6B1B52F126C90BCE00022640 /* Resources */,
@@ -154,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B1B531B26C90BCF00022640 /* Build configuration list for PBXNativeTarget "MuscleRecommendTests" */;
 			buildPhases = (
+				FF635C49AF5FC18E93D9E338 /* [CP] Check Pods Manifest.lock */,
 				6B1B530026C90BCE00022640 /* Sources */,
 				6B1B530126C90BCE00022640 /* Frameworks */,
 				6B1B530226C90BCE00022640 /* Resources */,
@@ -172,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B1B531E26C90BCF00022640 /* Build configuration list for PBXNativeTarget "MuscleRecommendUITests" */;
 			buildPhases = (
+				CC0B396E9B7CF3B67E36F3FE /* [CP] Check Pods Manifest.lock */,
 				6B1B530B26C90BCF00022640 /* Sources */,
 				6B1B530C26C90BCF00022640 /* Frameworks */,
 				6B1B530D26C90BCF00022640 /* Resources */,
@@ -253,6 +297,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CC0B396E9B7CF3B67E36F3FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleRecommend-MuscleRecommendUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE6D3ECBBD9219B63F7C6413 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleRecommend-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF635C49AF5FC18E93D9E338 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleRecommendTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B1B52EF26C90BCE00022640 /* Sources */ = {
@@ -414,6 +527,7 @@
 		};
 		6B1B531926C90BCF00022640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 408D66658C33F0201569B0DE /* Pods-MuscleRecommend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -436,6 +550,7 @@
 		};
 		6B1B531A26C90BCF00022640 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE0C540ED839BE2E55A5FC28 /* Pods-MuscleRecommend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,6 +573,7 @@
 		};
 		6B1B531C26C90BCF00022640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E92CD8E4FF69DE47DC8BB262 /* Pods-MuscleRecommendTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -480,6 +596,7 @@
 		};
 		6B1B531D26C90BCF00022640 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 000A277FCE95D116FFE2F6B0 /* Pods-MuscleRecommendTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -502,6 +619,7 @@
 		};
 		6B1B531F26C90BCF00022640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4DC4A684713E3497ED52298 /* Pods-MuscleRecommend-MuscleRecommendUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +640,7 @@
 		};
 		6B1B532026C90BCF00022640 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B127532411C56DE45BC4F639 /* Pods-MuscleRecommend-MuscleRecommendUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
