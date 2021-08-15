@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  MuscleReccomend
+//  MuscleRecommend
 //
 //  Created by 多喜和弘 on 2021/08/15.
 //

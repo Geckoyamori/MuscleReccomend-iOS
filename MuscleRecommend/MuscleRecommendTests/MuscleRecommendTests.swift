@@ -1,14 +1,14 @@
 //
-//  MuscleReccomendTests.swift
-//  MuscleReccomendTests
+//  MuscleRecommendTests.swift
+//  MuscleRecommendTests
 //
 //  Created by 多喜和弘 on 2021/08/15.
 //
 
 import XCTest
-@testable import MuscleReccomend
+@testable import MuscleRecommend
 
-class MuscleReccomendTests: XCTestCase {
+class MuscleRecommendTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
