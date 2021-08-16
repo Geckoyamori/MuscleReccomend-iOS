@@ -28,22 +28,20 @@ struct TrainingMenuView: View {
                         isAddMenuAlertPresented = true
                     }) {
                         Image(systemName: "plus")
-                    }
-                    // 追加するボタン押下時に筋トレメニュー追加ポップアップを表示
-                    .alert(isPresented: $isAddMenuAlertPresented) {
-                        Alert(
-                            title: Text("筋トレメニューの追加"),
-                            message: Text("追加する筋トレメニューを入力してください。"),
-                            primaryButton: .default(Text("OK"), action: {
-                                // 筋トレメニューを筋トレメニューテーブルに追加
-                                
-                            }),
-                            secondaryButton: .cancel(Text("キャンセル")))
-                    }
-                )
-                
+                    })
             }
         }
+        // 追加するボタン押下時に筋トレメニュー追加ポップアップを表示
+        .alert(isPresented: $isAddMenuAlertPresented,
+               TextAlert(
+                title: "筋トレメニューの追加",
+                message: "追加する筋トレメニューを入力してください。",
+                accept: "OK",
+                cancel: "キャンセル") { result in
+                if let inputText = result {
+                    trainingMenuViewModel.insertTrainingMenuModel(trainingMenuName: inputText)
+                } 
+               })
     }
 }
 
