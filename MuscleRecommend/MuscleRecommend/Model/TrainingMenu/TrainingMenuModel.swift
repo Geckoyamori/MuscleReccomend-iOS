@@ -41,9 +41,6 @@ extension TrainingMenuModel {
 
     // 筋トレメニューを追加
     func insertTrainingMenuModel(trainingMenuModel: TrainingMenuModel) {
-        // 追加する筋トレメニューの設定
-//        let trainingMenuModel = TrainingMenuModel()
-//        trainingMenuModel.trainingMenuName = trainingMenuName
         try! TrainingMenuModel.realm.write {
             TrainingMenuModel.realm.add(trainingMenuModel)
         }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 // 筋トレメニューのビュー
 struct TrainingMenuView: View {
@@ -39,9 +40,14 @@ struct TrainingMenuView: View {
                 accept: "OK",
                 cancel: "キャンセル") { result in
                 if let inputText = result {
-                    trainingMenuViewModel.insertTrainingMenuModel(trainingMenuName: inputText)
+                    trainingMenuViewModel.trainingMenuName = inputText
                 } 
                })
+    }
+    
+    init() {
+        // TODO:Realmファイルを表示するための処理
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 }
 
