@@ -24,16 +24,16 @@ struct TrainingMenuView: View {
                 }
                 // リスト削除処理
                 .onDelete(perform: rowRemove)
-                // ナビゲーションバーの設定
-                .navigationBarTitle("筋トレメニュー", displayMode: .inline)
-                .navigationBarItems(
-                    trailing: Button(action: {
-                        isAddMenuAlertPresented = true
-                    }) {
-                        Image(systemName: "plus")
-                    })
             }
             .listStyle(PlainListStyle())
+            // ナビゲーションバーの設定
+            .navigationBarTitle("筋トレメニュー", displayMode: .inline)
+            .navigationBarItems(
+                trailing: Button(action: {
+                    isAddMenuAlertPresented = true
+                }) {
+                    Image(systemName: "plus")
+                })
         }
         // 追加するボタン押下時に筋トレメニュー追加ポップアップを表示
         .alert(isPresented: $isAddMenuAlertPresented,
