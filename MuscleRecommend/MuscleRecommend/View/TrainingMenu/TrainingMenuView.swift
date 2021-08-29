@@ -19,9 +19,11 @@ struct TrainingMenuView: View {
         NavigationView {
             List {
                 // 筋トレメニューidを識別IDとしてリストを作成
-                ForEach(trainingMenuViewModel.trainingMenus, id: \.trainingMenuId) {
-                    trainingMenuModel in Text(trainingMenuModel.trainingMenuName)
+                ForEach(trainingMenuViewModel.trainingMenus, id: \.trainingMenuId) { trainingMenuModel in
+                    Text(trainingMenuModel.trainingMenuName)
                 }
+                // リスト削除処理
+                .onDelete(perform: rowRemove)
                 // ナビゲーションバーの設定
                 .navigationBarTitle("筋トレメニュー", displayMode: .inline)
                 .navigationBarItems(
@@ -31,6 +33,7 @@ struct TrainingMenuView: View {
                         Image(systemName: "plus")
                     })
             }
+            .listStyle(PlainListStyle())
         }
         // 追加するボタン押下時に筋トレメニュー追加ポップアップを表示
         .alert(isPresented: $isAddMenuAlertPresented,
@@ -40,7 +43,7 @@ struct TrainingMenuView: View {
                 accept: "OK",
                 cancel: "キャンセル") { result in
                 if let inputText = result {
-                    trainingMenuViewModel.trainingMenuName = inputText
+                    trainingMenuViewModel.addTrainingMenuName = inputText
                 } 
                })
     }
@@ -48,6 +51,12 @@ struct TrainingMenuView: View {
     init() {
         // TODO:Realmファイルを表示するための処理
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+    
+    func rowRemove(offsets: IndexSet) {
+        if let index = offsets.first {
+            trainingMenuViewModel.deleteTrainingMenuModel = trainingMenuViewModel.trainingMenus[index]
+        }
     }
 }
 

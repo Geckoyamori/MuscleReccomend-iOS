@@ -47,9 +47,9 @@ extension TrainingMenuModel {
     }
 
     // 選択した筋トレメニューを削除
-    func deleteTrainingMenuModel(trainingMenuList: Results<TrainingMenuModel>, index: Int) {
+    func deleteTrainingMenuModel(trainingMenuModel: TrainingMenuModel) {
         try! TrainingMenuModel.realm.write {
-            TrainingMenuModel.realm.delete(trainingMenuList[index])
+            TrainingMenuModel.realm.delete(trainingMenuModel)
         }
     }
 

@@ -13,27 +13,39 @@ import RealmSwift
 class TrainingMenuViewModel: ObservableObject {
     // 筋トレメニューの一覧取得結果
     @Published private(set) var trainingMenus: [TrainingMenuModel] = Array(TrainingMenuModel().selectTrainingMenuList())
-    // 筋トレメニュー名
-    @Published var trainingMenuName = ""
+    // 追加する筋トレメニュー名
+    @Published var addTrainingMenuName = ""
+    // 削除する筋トレメニュー
+    @Published var deleteTrainingMenuModel: TrainingMenuModel?
     
     private var addTrainingMenuTask: AnyCancellable?
+    private var deleteTrainingMenuTask: AnyCancellable?
     
     init() {
         
-        addTrainingMenuTask = self.$trainingMenuName
+        addTrainingMenuTask = self.$addTrainingMenuName
             .sink(receiveValue: {
-                trainingMenuName in
+                addTrainingMenuName in
                 // init()内の処理のでため、アプリ起動時にも「trainingMenuName=""」として呼ばれる
-                if trainingMenuName.isEmpty { return }
+                if addTrainingMenuName.isEmpty { return }
                 
                 // 追加する筋トレメニューの設定
                 let trainingMenuModel = TrainingMenuModel()
-                trainingMenuModel.trainingMenuName = trainingMenuName
+                trainingMenuModel.trainingMenuName = addTrainingMenuName
                 
                 // 筋トレメニューの追加
                 self.trainingMenus.append(trainingMenuModel)
                 TrainingMenuModel().insertTrainingMenuModel(trainingMenuModel: trainingMenuModel)
             })
+        
+        deleteTrainingMenuTask = self.$deleteTrainingMenuModel
+            .sink(receiveValue: {
+                deleteTrainingMenuModel in
+                if let deleteTrainingMenuModel = deleteTrainingMenuModel {
+                    TrainingMenuModel().deleteTrainingMenuModel(trainingMenuModel: deleteTrainingMenuModel)
+                }
+            })
+
 
     }
 }
