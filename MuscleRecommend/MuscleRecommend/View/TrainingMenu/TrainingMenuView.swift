@@ -43,7 +43,7 @@ struct TrainingMenuView: View {
                 accept: "OK",
                 cancel: "キャンセル") { result in
                 if let inputText = result {
-                    trainingMenuViewModel.addTrainingMenuName = inputText
+                    trainingMenuViewModel.addTrainingMenu(trainingMenuName: inputText)
                 } 
                })
     }
@@ -55,7 +55,7 @@ struct TrainingMenuView: View {
     
     func rowRemove(offsets: IndexSet) {
         if let index = offsets.first {
-            trainingMenuViewModel.deleteTrainingMenuModel = trainingMenuViewModel.trainingMenus[index]
+            trainingMenuViewModel.deleteTrainingMenu(trainingMenuModel: trainingMenuViewModel.trainingMenus[index])
         }
     }
 }
