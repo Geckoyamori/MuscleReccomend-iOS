@@ -8,10 +8,10 @@
 import SwiftUI
 import RealmSwift
 
-// 筋トレメニューのビュー
+// D-001:筋トレメニューのビュー
 struct TrainingMenuView: View {
     // 筋トレメニューのビューモデル
-    @ObservedObject var trainingMenuViewModel = TrainingMenuViewModel()
+    @ObservedObject private var trainingMenuViewModel = TrainingMenuViewModel()
     // 筋トレメニュー追加ポップアップの表示フラグ
     @State private var isAddMenuAlertPresented = false
     
@@ -20,7 +20,10 @@ struct TrainingMenuView: View {
             List {
                 // 筋トレメニューidを識別IDとしてリストを作成
                 ForEach(trainingMenuViewModel.trainingMenus, id: \.trainingMenuId) { trainingMenuModel in
-                    Text(trainingMenuModel.trainingMenuName)
+                    // 筋トレメニュー押下時に、D-002に遷移（引数：筋トレメニューID）
+                    NavigationLink(destination: TrainingRecordHistoryView(trainingMenuId: trainingMenuModel.trainingMenuId)) {
+                        Text(trainingMenuModel.trainingMenuName)
+                    }
                 }
                 // リスト削除処理
                 .onDelete(perform: rowRemove)

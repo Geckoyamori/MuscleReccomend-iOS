@@ -19,6 +19,7 @@
 		6BD15E9E26C9236E00F4CE66 /* TrainingMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD15E9D26C9236E00F4CE66 /* TrainingMenuViewModel.swift */; };
 		6BD15EA826C9271F00F4CE66 /* TrainingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD15EA726C9271F00F4CE66 /* TrainingMenuView.swift */; };
 		6BD15EB826C9EBEF00F4CE66 /* TextAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD15EB726C9EBEF00F4CE66 /* TextAlert.swift */; };
+		6BD15EC126E49F7200F4CE66 /* TrainingRecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD15EC026E49F7200F4CE66 /* TrainingRecordHistoryView.swift */; };
 		7342F6173EE5592E3C92A6F3 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51AF4E54F260BF13268E311 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */; };
 		EAB3C1964812B171A16AAE0D /* Pods_MuscleRecommend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683C010BD498FB3C51291FCD /* Pods_MuscleRecommend.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		6BD15E9D26C9236E00F4CE66 /* TrainingMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMenuViewModel.swift; sourceTree = "<group>"; };
 		6BD15EA726C9271F00F4CE66 /* TrainingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMenuView.swift; sourceTree = "<group>"; };
 		6BD15EB726C9EBEF00F4CE66 /* TextAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlert.swift; sourceTree = "<group>"; };
+		6BD15EC026E49F7200F4CE66 /* TrainingRecordHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingRecordHistoryView.swift; sourceTree = "<group>"; };
 		A8F56C7CF4DB31F0859A7B48 /* Pods-MuscleRecommendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleRecommendTests.release.xcconfig"; path = "Target Support Files/Pods-MuscleRecommendTests/Pods-MuscleRecommendTests.release.xcconfig"; sourceTree = "<group>"; };
 		B51AF4E54F260BF13268E311 /* Pods_MuscleRecommend_MuscleRecommendUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommend_MuscleRecommendUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE65668DAA9C045170015A04 /* Pods_MuscleRecommendTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleRecommendTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 		6B1B536026C9156800022640 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6BD15EBF26E49F2300F4CE66 /* TrainingRecordHistory */,
 				6BD15EA626C9267D00F4CE66 /* TrainingMenu */,
 			);
 			path = View;
@@ -218,6 +221,14 @@
 				6BD15EA726C9271F00F4CE66 /* TrainingMenuView.swift */,
 			);
 			path = TrainingMenu;
+			sourceTree = "<group>";
+		};
+		6BD15EBF26E49F2300F4CE66 /* TrainingRecordHistory */ = {
+			isa = PBXGroup;
+			children = (
+				6BD15EC026E49F7200F4CE66 /* TrainingRecordHistoryView.swift */,
+			);
+			path = TrainingRecordHistory;
 			sourceTree = "<group>";
 		};
 		DCD58C11C2111A4B6D1A2788 /* Frameworks */ = {
@@ -484,6 +495,7 @@
 			files = (
 				6B1B52F926C90BCE00022640 /* ContentView.swift in Sources */,
 				6B1B536726C9166900022640 /* TrainingMenuModel.swift in Sources */,
+				6BD15EC126E49F7200F4CE66 /* TrainingRecordHistoryView.swift in Sources */,
 				6BD15EB826C9EBEF00F4CE66 /* TextAlert.swift in Sources */,
 				6B1B52F726C90BCE00022640 /* MuscleRecommendApp.swift in Sources */,
 				6BD15EA826C9271F00F4CE66 /* TrainingMenuView.swift in Sources */,
