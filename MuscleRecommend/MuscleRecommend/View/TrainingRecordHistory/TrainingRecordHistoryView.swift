@@ -9,11 +9,14 @@ import SwiftUI
 
 // D-002:筋トレ履歴のビュー
 struct TrainingRecordHistoryView: View {
+
+    // 筋トレ記録のビューモデル
+    @ObservedObject private var trainingRecordViewModel = TrainingRecordViewModel()
     
     // D-001からのパラメータ
     // 筋トレメニューID
     let trainingMenuId: String
-    
+ 
     // 初回筋トレメニューViewのレイアウト
     private let INITIAL_DESCRIPTION = "初回の%@トレーニングを記録後に、\n次回以降の推奨メニューが表示されます。"
     private let INITIAL_COLOR = #colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 0.3034032534)
