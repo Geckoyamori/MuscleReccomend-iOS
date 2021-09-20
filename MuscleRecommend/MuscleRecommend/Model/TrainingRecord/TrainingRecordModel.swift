@@ -56,16 +56,17 @@ extension TrainingRecordModel {
         return TrainingRecordModel.realm.objects(TrainingRecordModel.self).filter("trainingMenuId == '\(String(describing: trainingMenuId))'").filter("trainingStrength == '\(strength)'").sorted(byKeyPath: "createdDate", ascending: false)
     }
     
-//    // 筋トレメニューのDBに追加
-//    func insertTrainingMenuModel(trainingMenuName: String) {
-//        // 追加する筋トレメニューの設定
-//        let trainingMenuModel = TrainingMenuModel()
-//        trainingMenuModel.trainingMenuName = trainingMenuName
-//        try! realm.write {
-//            realm.add(TrainingMenuModel(value: trainingMenuModel))
-//        }
-//    }
-//
+    // 筋トレメニューのDBに追加
+    func insertTrainingMenuModel(trainingMenuName: String) {
+        // 追加する筋トレメニューの設定
+        let trainingMenuModel = TrainingRecordModel()
+        trainingMenuModel.trainingStrength = trainingMenuName
+        trainingMenuModel.trainingMenuId = trainingMenuName
+        try! TrainingRecordModel.realm.write {
+            TrainingRecordModel.realm.add(TrainingRecordModel(value: trainingMenuModel))
+        }
+    }
+
     // 選択した筋トレ記録を削除
     func deleteTrainingRecordData(trainingRecordList: Results<TrainingRecordModel>, index: Int) {
         try! TrainingRecordModel.realm.write {

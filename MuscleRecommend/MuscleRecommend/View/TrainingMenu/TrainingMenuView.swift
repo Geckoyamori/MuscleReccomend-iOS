@@ -14,7 +14,6 @@ struct TrainingMenuView: View {
     @ObservedObject private var trainingMenuViewModel = TrainingMenuViewModel()
     // 筋トレメニュー追加ポップアップの表示フラグ
     @State private var isAddMenuAlertPresented = false
-    @State private var aa = false
     
     var body: some View {
         NavigationView {

@@ -21,6 +21,8 @@ class TrainingRecordViewModel: ObservableObject {
     init(trainingMenuId: String) {
         // 筋トレメニューidに紐づく筋トレ記録のリスト（作成日時が新しい順）の取得
         trainingMenuResults = TrainingRecordModel().selectTrainingRecordList(trainingMenuId: trainingMenuId)
+        // 筋トレメニューの一覧取得結果を格納するViewModelの初期化
+        trainingMenus = Array(trainingMenuResults)
         
         // DBに変更があったタイミングで変数trainingMenusに値を再格納する
         notificationTokens.append(trainingMenuResults.observe { change in
@@ -33,11 +35,19 @@ class TrainingRecordViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         })
-
     }
     
     deinit {
         notificationTokens.forEach { $0.invalidate() }
+    }
+    
+    // 筋トレ強度に紐づく筋トレ記録のリストを最新順で取得
+    func sortTrainingRecordViewModel(strengthLayout: StrengthLayout) -> [TrainingRecordModel] {
+        // 筋トレ強度に紐づく筋トレ記録のリストを取得
+        var trainingMenusByStrength = trainingMenus.filter { $0.trainingStrength == strengthLayout.strength }
+        // 最新順に並び替え
+        trainingMenusByStrength.sort(by: { $0.createdDate > $1.createdDate })
+        return trainingMenusByStrength
     }
     
 //    // 筋トレメニューの追加
