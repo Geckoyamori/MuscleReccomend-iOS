@@ -33,10 +33,10 @@ struct TrainingRecordHistoryView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                // 筋トレメニューViewの生成
-                ForEach(recommendLayoutArray, id: \.self) { strengthLayout in
+        VStack(spacing: 20) {
+            // 筋トレメニューViewの生成
+            ForEach(recommendLayoutArray, id: \.self) { strengthLayout in
+                NavigationLink(destination: NavigationLazyView(TrainingRecordNoteView(trainigRecordId: "", initialStrength: strengthLayout.strength))) {
                     // 各強度のレイアウト定義の初回フラグより、表示する筋トレメニュービューを設定
                     if strengthLayout.initialFlag {
                         // 初回筋トレメニューViewの生成
@@ -46,7 +46,7 @@ struct TrainingRecordHistoryView: View {
                                 .fill(Color(INITIAL_COLOR))
                                 .frame(height: 100)
                             Spacer().frame(width: 20)
-                        }.overlay( Text(String(format: NSLocalizedString(INITIAL_DESCRIPTION, comment: ""), strengthLayout.strength)))
+                        }.overlay(Text(String(format: NSLocalizedString(INITIAL_DESCRIPTION, comment: ""), strengthLayout.strength)).foregroundColor(.primary))
                     } else {
                         // 推奨筋トレメニューViewの生成
                         HStack {
@@ -60,6 +60,9 @@ struct TrainingRecordHistoryView: View {
                 }
             }
         }
+        
+        // ナビゲーションバーの設定
+        .navigationBarTitle("筋トレ記録履歴", displayMode: .inline)
     }
 }
 
@@ -72,6 +75,7 @@ struct StrengthLayout: Hashable {
     let color: UIColor
     // 初回フラグ（対象筋トレ強度の筋トレメニューが未実施であればtrue）
     var initialFlag: Bool = true
+    
     // structであるため、mutatingをつけてプロパティの変更を可能とするメソッドを定義
     mutating func setInitialFlag(initialFlag: Bool) {
         self.initialFlag = initialFlag
