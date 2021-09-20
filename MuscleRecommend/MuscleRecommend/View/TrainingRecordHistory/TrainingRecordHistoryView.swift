@@ -37,26 +37,24 @@ struct TrainingRecordHistoryView: View {
             VStack(spacing: 20) {
                 // 筋トレメニューViewの生成
                 ForEach(recommendLayoutArray, id: \.self) { strengthLayout in
-                    ZStack {
-                        // 各強度のレイアウト定義の初回フラグより、表示する筋トレメニュービューを設定
-                        if strengthLayout.initialFlag {
-                            // 初回筋トレメニューViewの生成
-                            HStack {
-                                Spacer().frame(width: 20)
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color(INITIAL_COLOR))
-                                    .frame(height: 100)
-                                Spacer().frame(width: 20)
-                            }.overlay( Text(String(format: NSLocalizedString(INITIAL_DESCRIPTION, comment: ""), strengthLayout.strength)))
-                        } else {
-                            // 推奨筋トレメニューViewの生成
-                            HStack {
-                                Spacer().frame(width: 20)
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color(strengthLayout.color))
-                                    .frame(height: 100)
-                                Spacer().frame(width: 20)
-                            }.overlay( Text(String(format: NSLocalizedString(INITIAL_DESCRIPTION, comment: ""), strengthLayout.strength)))
+                    // 各強度のレイアウト定義の初回フラグより、表示する筋トレメニュービューを設定
+                    if strengthLayout.initialFlag {
+                        // 初回筋トレメニューViewの生成
+                        HStack {
+                            Spacer().frame(width: 20)
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color(INITIAL_COLOR))
+                                .frame(height: 100)
+                            Spacer().frame(width: 20)
+                        }.overlay( Text(String(format: NSLocalizedString(INITIAL_DESCRIPTION, comment: ""), strengthLayout.strength)))
+                    } else {
+                        // 推奨筋トレメニューViewの生成
+                        HStack {
+                            Spacer().frame(width: 20)
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color(strengthLayout.color))
+                                .frame(height: 100)
+                            Spacer().frame(width: 20)
                         }
                     }
                 }
