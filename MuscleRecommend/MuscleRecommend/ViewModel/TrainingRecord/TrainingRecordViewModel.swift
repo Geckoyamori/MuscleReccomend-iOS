@@ -12,7 +12,7 @@ import RealmSwift
 // 筋トレ記録のビューモデル
 class TrainingRecordViewModel: ObservableObject {
     // 筋トレメニューidと筋トレ強度に紐づく筋トレ記録のリスト（作成日時が新しい順）の取得結果
-    private var trainingMenuResults: Results<TrainingRecordModel> = TrainingRecordModel().selectTrainingRecordList(trainingMenuId: "aa")
+    private var trainingMenuResults: Results<TrainingRecordModel>
     // 筋トレメニューの一覧取得結果を格納するViewModel
     @Published private(set) var trainingMenus: [TrainingRecordModel] = []
  
@@ -22,7 +22,9 @@ class TrainingRecordViewModel: ObservableObject {
     // 筋トレメニューID
     let trainingMenuId: String = ""
     
-    init() {
+    init(trainingMenuId: String) {
+        trainingMenuResults = TrainingRecordModel().selectTrainingRecordList(trainingMenuId: trainingMenuId)
+        
         // DBに変更があったタイミングで変数trainingMenusに値を再格納する
         notificationTokens.append(trainingMenuResults.observe { change in
             switch change {

@@ -11,11 +11,11 @@ import SwiftUI
 struct TrainingRecordHistoryView: View {
 
     // 筋トレ記録のビューモデル
-    @ObservedObject private var trainingRecordViewModel = TrainingRecordViewModel()
+    @ObservedObject private var trainingRecordViewModel: TrainingRecordViewModel
     
-    // D-001からのパラメータ
-    // 筋トレメニューID
-    let trainingMenuId: String
+//    // D-001からのパラメータ
+//    // 筋トレメニューID
+//    let trainingMenuId: String
  
     // 初回筋トレメニューViewのレイアウト
     private let INITIAL_DESCRIPTION = "初回の%@トレーニングを記録後に、\n次回以降の推奨メニューが表示されます。"
@@ -24,6 +24,12 @@ struct TrainingRecordHistoryView: View {
     private let RECOMMEND_LAYOUT_ARRAY = [StrengthLayout(strength: "高強度", color: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.3043396832)), StrengthLayout(strength: "中強度", color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 0.2987478596)), StrengthLayout(strength: "低強度", color: #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 0.3016641695))]
     // 推奨筋トレメニューViewの表示フラグ
     @State private var isRecommendedHighStrengthMenuPresented = false
+    
+    init(trainingMenuId: String) {
+        trainingRecordViewModel = TrainingRecordViewModel(trainingMenuId: trainingMenuId)
+        print("@@@@@@@@@@@@@@@@@@@@@")
+        print(trainingRecordViewModel)
+    }
     
     var body: some View {
         NavigationView {

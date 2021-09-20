@@ -14,6 +14,7 @@ struct TrainingMenuView: View {
     @ObservedObject private var trainingMenuViewModel = TrainingMenuViewModel()
     // 筋トレメニュー追加ポップアップの表示フラグ
     @State private var isAddMenuAlertPresented = false
+    @State private var aa = false
     
     var body: some View {
         NavigationView {
@@ -21,7 +22,7 @@ struct TrainingMenuView: View {
                 // 筋トレメニューidを識別IDとしてリストを作成
                 ForEach(trainingMenuViewModel.trainingMenus, id: \.trainingMenuId) { trainingMenuModel in
                     // 筋トレメニュー押下時に、D-002に遷移（引数：筋トレメニューID）
-                    NavigationLink(destination: TrainingRecordHistoryView(trainingMenuId: trainingMenuModel.trainingMenuId)) {
+                    NavigationLink(destination: NavigationLazyView(TrainingRecordHistoryView(trainingMenuId: trainingMenuModel.trainingMenuId))) {
                         Text(trainingMenuModel.trainingMenuName)
                     }
                 }
