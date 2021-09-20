@@ -36,6 +36,7 @@ struct TrainingRecordHistoryView: View {
         VStack(spacing: 20) {
             // 筋トレメニューViewの生成
             ForEach(recommendLayoutArray, id: \.self) { strengthLayout in
+                // 筋トレメニューView押下時に、D-003に遷移（引数：筋トレ記録ID、初回強度）
                 NavigationLink(destination: NavigationLazyView(TrainingRecordNoteView(trainigRecordId: "", initialStrength: strengthLayout.strength))) {
                     // 各強度のレイアウト定義の初回フラグより、表示する筋トレメニュービューを設定
                     if strengthLayout.initialFlag {
