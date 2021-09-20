@@ -12,15 +12,11 @@ struct TrainingRecordHistoryView: View {
 
     // 筋トレ記録のビューモデル
     @ObservedObject private var trainingRecordViewModel: TrainingRecordViewModel
-    
-//    // D-001からのパラメータ
-//    // 筋トレメニューID
-//    let trainingMenuId: String
  
     // 初回筋トレメニューViewのレイアウト
     private let INITIAL_DESCRIPTION = "初回の%@トレーニングを記録後に、\n次回以降の推奨メニューが表示されます。"
     private let INITIAL_COLOR = #colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 0.3034032534)
-    // 推奨筋トレメニュービューのレイアウト
+    // 推奨筋トレメニューViewのレイアウト
     private let RECOMMEND_LAYOUT_ARRAY = [StrengthLayout(strength: "高強度", color: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.3043396832)), StrengthLayout(strength: "中強度", color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 0.2987478596)), StrengthLayout(strength: "低強度", color: #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 0.3016641695))]
     // 推奨筋トレメニューViewの表示フラグ
     @State private var isRecommendedHighStrengthMenuPresented = false
@@ -34,7 +30,7 @@ struct TrainingRecordHistoryView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                // 推奨筋トレメニューViewの生成
+                // 筋トレメニューViewの生成
                 ForEach(RECOMMEND_LAYOUT_ARRAY, id: \.self) { strengthLayout in
                     ZStack {
                         // 初回筋トレメニューViewの生成
