@@ -11,7 +11,7 @@ import SwiftUI
 struct TrainingRecordHistoryView: View {
 
     // 筋トレ記録のビューモデル
-    @ObservedObject private var trainingRecordViewModel: TrainingLoadViewModel
+    @ObservedObject private var trainingRecordViewModel: TrainingRecordViewModel
  
     // 初回筋トレメニューViewのレイアウト
     private let INITIAL_DESCRIPTION = "初回の%@トレーニングを記録後に、\n次回以降の推奨メニューが表示されます。"
@@ -21,7 +21,7 @@ struct TrainingRecordHistoryView: View {
     
     init(trainingMenuId: String) {
         // 筋トレ記録のビューモデル
-        trainingRecordViewModel = TrainingLoadViewModel(trainingMenuId: trainingMenuId)
+        trainingRecordViewModel = TrainingRecordViewModel(trainingMenuId: trainingMenuId)
       
         // 各強度のレイアウト定義に初回フラグを設定
         for (index, strengthLayout) in recommendLayoutArray.enumerated() {

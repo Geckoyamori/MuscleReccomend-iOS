@@ -10,30 +10,77 @@ import SwiftUI
 // D-003:筋トレ記録のビュー
 struct TrainingRecordNoteView: View {
     
+    // 筋トレ負荷量のビューモデル
+    @ObservedObject private var trainingLoadViewModel: TrainingLoadViewModel
+    
+    // 筋トレ記録Viewのレイアウト
+    private let SET_TYPE = ["ウォームアップ", "メイン"]
+    
+    // 初回筋トレ記録Viewのレイアウト
+    private let INITIAL_WARMUP_SET = 5
+    private let INITIAL_MAIN_SET = 5
+    
     init(trainigRecordId: String, initialStrength: String) {
+        // 筋トレ負荷量のビューモデル
+        trainingLoadViewModel = TrainingLoadViewModel(trainingRecordId: trainigRecordId)
         
     }
     
     var body: some View {
-        Text("::")
-//        VSstack {
-//            List {
-//                // 筋トレメニューidを識別IDとしてリストを作成
-//                ForEach(trainingMenuViewModel.trainingMenus, id: \.trainingMenuId) { trainingMenuModel in
-//                    // 筋トレメニュー押下時に、D-002に遷移（引数：筋トレメニューID）
-//                    NavigationLink(destination: NavigationLazyView(TrainingRecordHistoryView(trainingMenuId: trainingMenuModel.trainingMenuId))) {
-//                        Text(trainingMenuModel.trainingMenuName)
-//                    }
-//                }
-//            }
-//            .listStyle(PlainListStyle())
-//        }
+        
+
+            List {
+                Section(header: Text(SET_TYPE[0])) {
+                    ForEach(1..<(INITIAL_WARMUP_SET + 1)) { index in
+                        TrainingRecordNoteRow(index: index)
+                    }
+                }
+                Section(header: Text(SET_TYPE[1])) {
+                    ForEach(1..<(INITIAL_MAIN_SET + 1)) { index in
+                        TrainingRecordNoteRow(index: index)
+                    }
+                }
+            }
+            .listStyle(GroupedListStyle())
+
         
         
         
-//        // ナビゲーションバーの設定
-//        .navigationBarTitle("筋トレ記録", displayMode: .inline)
-        
+        // ナビゲーションバーの設定
+        .navigationBarTitle("筋トレ記録", displayMode: .inline)
+        .navigationBarItems(
+            trailing: Button(action: {
+                addTrainingRecordNote()
+            }) {
+                Text("保存")
+            })
+    }
+    
+    // 筋トレ記録追加処理
+    func addTrainingRecordNote() {
+      
+    }
+}
+
+// 筋トレ記録ビューの１行を表すView
+struct TrainingRecordNoteRow: View {
+    
+    // 筋トレ負荷量の重量
+    @State private var weight: String = String(0)
+    // 筋トレ負荷量のレップ数
+    @State private var rep: String = String(0)
+    // セット目
+    var index: Int
+    
+    var body: some View {
+        HStack(spacing: 20) {
+            Text("\(index)セット目")
+            TextField("", text: $weight)
+            Text("kg")
+            Text("×")
+            TextField("", text: $rep)
+            Text("reps")
+        }
     }
 }
 
