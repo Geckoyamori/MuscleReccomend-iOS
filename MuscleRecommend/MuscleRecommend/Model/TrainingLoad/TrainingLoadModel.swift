@@ -42,7 +42,7 @@ extension TrainingLoadModel {
     
     // 筋トレ記録idに紐づく筋トレ負荷量リストを取得
     func selectTrainingLoadList(trainingRecordId: String) -> Results<TrainingLoadModel> {
-        return TrainingLoadModel.realm.objects(TrainingLoadModel.self).filter("trainingRecordId == '\(trainingRecordId)'").sorted(byKeyPath: "createdDate", ascending: true)
+        return TrainingLoadModel.realm.objects(TrainingLoadModel.self).filter("trainingRecordId == '\(trainingRecordId)'").sorted(byKeyPath: "noOfSet", ascending: true)
     }
     
 //    // 筋トレ記録idとセット種類に紐づく筋トレ負荷量リストを取得
