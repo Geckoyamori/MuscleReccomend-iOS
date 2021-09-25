@@ -12,25 +12,25 @@ import RealmSwift
 // 筋トレ記録のビューモデル
 class TrainingRecordViewModel: ObservableObject {
     // 筋トレメニューidに紐づく筋トレ記録のリスト（作成日時が新しい順）の取得結果
-    private var trainingMenuResults: Results<TrainingRecordModel>
-    // 筋トレメニューの一覧取得結果を格納するViewModel
-    @Published private(set) var trainingMenus: [TrainingRecordModel] = []
+    private var trainingRecordResults: Results<TrainingRecordModel>
+    // 筋トレ記録の一覧取得結果を格納するViewModel
+    @Published private(set) var trainingRecords: [TrainingRecordModel] = []
  
     private var notificationTokens: [NotificationToken] = []
     
     init(trainingMenuId: String) {
         // 筋トレメニューidに紐づく筋トレ記録のリスト（作成日時が新しい順）の取得
-        trainingMenuResults = TrainingRecordModel().selectTrainingRecordList(trainingMenuId: trainingMenuId)
-        // 筋トレメニューの一覧取得結果を格納するViewModelの初期化
-        trainingMenus = Array(trainingMenuResults)
+        trainingRecordResults = TrainingRecordModel().selectTrainingRecordList(trainingMenuId: trainingMenuId)
+        // 筋トレ記録の一覧取得結果を格納するViewModelの初期化
+        trainingRecords = Array(trainingRecordResults)
         
         // DBに変更があったタイミングで変数trainingMenusに値を再格納する
-        notificationTokens.append(trainingMenuResults.observe { change in
+        notificationTokens.append(trainingRecordResults.observe { change in
             switch change {
             case let .initial(results):
-                self.trainingMenus = Array(results)
+                self.trainingRecords = Array(results)
             case let .update(results, deletions: _, insertions: _, modifications: _):
-                self.trainingMenus = Array(results)
+                self.trainingRecords = Array(results)
             case let .error(error):
                 print(error.localizedDescription)
             }
@@ -44,10 +44,10 @@ class TrainingRecordViewModel: ObservableObject {
     // 筋トレ強度に紐づく筋トレ記録のリストを最新順で取得
     func sortTrainingRecordViewModel(strengthLayout: StrengthLayout) -> [TrainingRecordModel] {
         // 筋トレ強度に紐づく筋トレ記録のリストを取得
-        var trainingMenusByStrength = trainingMenus.filter { $0.trainingStrength == strengthLayout.strength }
+        var trainingRecordsByStrength = trainingRecords.filter { $0.trainingStrength == strengthLayout.strength }
         // 最新順に並び替え
-        trainingMenusByStrength.sort(by: { $0.createdDate > $1.createdDate })
-        return trainingMenusByStrength
+        trainingRecordsByStrength.sort(by: { $0.createdDate > $1.createdDate })
+        return trainingRecordsByStrength
     }
     
 //    // 筋トレメニューの追加

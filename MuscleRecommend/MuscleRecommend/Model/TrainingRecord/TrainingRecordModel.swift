@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-// 筋トレ記録のモデル
+// T-002:筋トレ記録のモデル
 class TrainingRecordModel: Object {
     
     // 筋トレ記録id

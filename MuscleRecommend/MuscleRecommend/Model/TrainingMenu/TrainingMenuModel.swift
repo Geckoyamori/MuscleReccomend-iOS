@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-// 筋トレメニューのモデル
+// T-001:筋トレメニューのモデル
 class TrainingMenuModel: Object {
     
     // 筋トレメニューid
