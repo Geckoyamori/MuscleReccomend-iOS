@@ -56,14 +56,10 @@ extension TrainingRecordModel {
         return TrainingRecordModel.realm.objects(TrainingRecordModel.self).filter("trainingMenuId == '\(String(describing: trainingMenuId))'").filter("trainingStrength == '\(strength)'").sorted(byKeyPath: "createdDate", ascending: false)
     }
     
-    // 筋トレメニューのDBに追加
-    func insertTrainingMenuModel(trainingMenuName: String) {
-        // 追加する筋トレメニューの設定
-        let trainingMenuModel = TrainingRecordModel()
-        trainingMenuModel.trainingStrength = trainingMenuName
-        trainingMenuModel.trainingMenuId = trainingMenuName
+    // 筋トレ記録を新規追加
+    func insertTrainingRecordModel(trainingRecordModel: TrainingRecordModel) {
         try! TrainingRecordModel.realm.write {
-            TrainingRecordModel.realm.add(TrainingRecordModel(value: trainingMenuModel))
+            TrainingRecordModel.realm.add(trainingRecordModel)
         }
     }
 

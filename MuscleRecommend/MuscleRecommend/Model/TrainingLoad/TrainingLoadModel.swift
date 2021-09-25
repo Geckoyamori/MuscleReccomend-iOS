@@ -55,10 +55,10 @@ extension TrainingLoadModel {
         return TrainingLoadModel.realm.objects(TrainingRecordModel.self).filter("trainingRecordId == '\(String(describing: trainingRecordId))'")
     }
         
-    // 入力した記録データを筋トレ記録に追加（新規登録）
-    func insertTrainingRecordData(trainingRecordModel: TrainingRecordModel) {
+    // 入力した負荷量データを追加
+    func insertTrainingLoadData(trainingLoadModel: TrainingLoadModel) {
         try! TrainingLoadModel.realm.write {
-            TrainingLoadModel.realm.add(TrainingRecordModel(value: trainingRecordModel))
+            TrainingLoadModel.realm.add(trainingLoadModel)
         }
     }
     

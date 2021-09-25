@@ -10,14 +10,17 @@ import SwiftUI
 // D-003:筋トレ記録のビュー
 struct TrainingRecordNoteView: View {
     
-    // 筋トレ負荷量のビューモデル
-    @ObservedObject private var trainingLoadViewModel: TrainingLoadViewModel
-    
+    // 筋トレメニューid（画面間パラメータ）
+    let trainingMenuId: String
     // 筋トレ記録id（画面間パラメータ）
     let trainigRecordId: String
     // 筋トレ強度（画面間パラメータ）
     let initialStrength: String
     
+    // 筋トレ負荷量のビューモデル
+    @ObservedObject private var trainingLoadViewModel: TrainingLoadViewModel
+    
+    // 画面から入力された筋トレ負荷量を保持しておくリスト
     @State private var warmupTrainingLoadModelList: [TrainingLoadModel] = []
     @State private var mainTrainingLoadModelList: [TrainingLoadModel] = []
     
@@ -28,7 +31,8 @@ struct TrainingRecordNoteView: View {
     private let INITIAL_WARMUP_SET = 5
     private let INITIAL_MAIN_SET = 5
     
-    init(trainigRecordId: String, initialStrength: String) {
+    init(trainingMenuId: String, trainigRecordId: String, initialStrength: String) {
+        self.trainingMenuId = trainingMenuId
         self.trainigRecordId = trainigRecordId
         self.initialStrength = initialStrength
         
@@ -61,15 +65,28 @@ struct TrainingRecordNoteView: View {
         .navigationBarTitle("筋トレ記録", displayMode: .inline)
         .navigationBarItems(
             trailing: Button(action: {
-                saveTrainingRecordNote()
+                saveTrainingRecordNote(warmupTrainingLoadModelList: self.warmupTrainingLoadModelList, mainTrainingLoadModelList: self.mainTrainingLoadModelList)
             }) {
                 Text("保存")
             })
     }
     
     // 筋トレ記録保存処理
-    func saveTrainingRecordNote() {
-      
+    func saveTrainingRecordNote(warmupTrainingLoadModelList: [TrainingLoadModel], mainTrainingLoadModelList: [TrainingLoadModel]) {
+        // 重量と回数が0ではない負荷量データを抽出して、格納するためのリスト
+        var extractTrainingLoadModelList: [TrainingLoadModel] = []
+        // 重量と回数が0ではない負荷量データを抽出
+        for trainingLoadModel in warmupTrainingLoadModelList + mainTrainingLoadModelList {
+            if trainingLoadModel.weight != 0 && trainingLoadModel.rep != 0 {
+                extractTrainingLoadModelList.append(trainingLoadModel)
+            }
+        }
+        
+        // ウォームアップ、メイン含む筋トレ記録を保存して、保存した筋トレ記録の筋トレ記録idを取得
+        let trainingRecordId = TrainingRecordViewModel(trainingMenuId: trainingMenuId).addTrainingRecord(trainingMenuId: self.trainingMenuId, initialStrength: self.initialStrength, trainingLoadModelList: extractTrainingLoadModelList)
+        
+        // ウォームアップ、メインの負荷量を保存
+        trainingLoadViewModel.insertTrainingLoadData(trainingRecordId: trainingRecordId, trainingLoadModelList: extractTrainingLoadModelList)
     }
 }
 
@@ -144,6 +161,6 @@ struct TrainingRecordNoteRow: View {
 
 struct TrainingRecordNote_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingRecordNoteView(trainigRecordId: "", initialStrength: "")
+        TrainingRecordNoteView(trainingMenuId: "", trainigRecordId: "", initialStrength: "")
     }
 }

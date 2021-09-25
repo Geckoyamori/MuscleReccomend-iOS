@@ -18,6 +18,8 @@ class TrainingRecordViewModel: ObservableObject {
  
     private var notificationTokens: [NotificationToken] = []
     
+    private let SET_TYPE = ["ウォームアップ", "メイン"]
+    
     init(trainingMenuId: String) {
         // 筋トレメニューidに紐づく筋トレ記録のリスト（作成日時が新しい順）の取得
         trainingRecordResults = TrainingRecordModel().selectTrainingRecordList(trainingMenuId: trainingMenuId)
@@ -50,15 +52,29 @@ class TrainingRecordViewModel: ObservableObject {
         return trainingRecordsByStrength
     }
     
-//    // 筋トレメニューの追加
-//    func addTrainingMenu(trainingMenuName: String) {
-//        // 追加する筋トレメニューの設定
-//        let trainingMenuModel = TrainingMenuModel()
-//        trainingMenuModel.trainingMenuName = trainingMenuName
-//
-//        // 筋トレメニューの追加
-//        TrainingMenuModel().insertTrainingMenuModel(trainingMenuModel: trainingMenuModel)
-//    }
+    // 筋トレ記録の追加
+    func addTrainingRecord(trainingMenuId: String, initialStrength: String, trainingLoadModelList: [TrainingLoadModel]) -> String {
+        // 追加する筋トレ記録の設定
+        let trainingRecordModel = TrainingRecordModel()
+        // 筋トレメニューid
+        trainingRecordModel.trainingMenuId = trainingMenuId
+        // 筋トレ強度
+        trainingRecordModel.trainingStrength = initialStrength
+        // ウォームアップ筋トレ総負荷量
+        for trainingLoadModel in trainingLoadModelList.filter({ $0.trainingSetType == SET_TYPE[0] }) {
+            trainingRecordModel.totalWarmUpTrainingLoad += trainingLoadModel.weight * Double(trainingLoadModel.rep)
+        }
+        // メイン筋トレ総負荷量
+        for trainingLoadModel in trainingLoadModelList.filter({ $0.trainingSetType == SET_TYPE[1] }) {
+            trainingRecordModel.totalMainTrainingLoad += trainingLoadModel.weight * Double(trainingLoadModel.rep)
+        }
+        
+        // 筋トレ記録の追加
+        TrainingRecordModel().insertTrainingRecordModel(trainingRecordModel: trainingRecordModel)
+        
+        // 新規追加した筋トレ記録の筋トレ記録idを返却
+        return trainingRecordModel.trainingRecordId
+    }
 //
 //    // 筋トレメニューの削除
 //    func deleteTrainingMenu(trainingMenuModel: TrainingMenuModel) {

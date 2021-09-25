@@ -9,6 +9,9 @@ import SwiftUI
 
 // D-002:筋トレ履歴のビュー
 struct TrainingRecordHistoryView: View {
+    
+    // 筋トレメニューid（画面間パラメータ）
+    let trainingMenuId: String
 
     // 筋トレ記録のビューモデル
     @ObservedObject private var trainingRecordViewModel: TrainingRecordViewModel
@@ -20,6 +23,8 @@ struct TrainingRecordHistoryView: View {
     private var recommendLayoutArray = [StrengthLayout(strength: "高強度", color: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.3043396832)), StrengthLayout(strength: "中強度", color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 0.2987478596)), StrengthLayout(strength: "低強度", color: #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 0.3016641695))]
     
     init(trainingMenuId: String) {
+        self.trainingMenuId = trainingMenuId
+        
         // 筋トレ記録のビューモデル
         trainingRecordViewModel = TrainingRecordViewModel(trainingMenuId: trainingMenuId)
       
@@ -37,7 +42,7 @@ struct TrainingRecordHistoryView: View {
             // 筋トレメニューViewの生成
             ForEach(recommendLayoutArray, id: \.self) { strengthLayout in
                 // 筋トレメニューView押下時に、D-003に遷移（引数：筋トレ記録ID、初回強度）
-                NavigationLink(destination: NavigationLazyView(TrainingRecordNoteView(trainigRecordId: "", initialStrength: strengthLayout.strength))) {
+                NavigationLink(destination: NavigationLazyView(TrainingRecordNoteView(trainingMenuId: trainingMenuId, trainigRecordId: "", initialStrength: strengthLayout.strength))) {
                     // 各強度のレイアウト定義の初回フラグより、表示する筋トレメニュービューを設定
                     if strengthLayout.initialFlag {
                         // 初回筋トレメニューViewの生成

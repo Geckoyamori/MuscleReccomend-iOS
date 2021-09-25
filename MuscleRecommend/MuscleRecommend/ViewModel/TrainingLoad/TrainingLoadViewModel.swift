@@ -49,16 +49,16 @@ class TrainingLoadViewModel: ObservableObject {
 //        trainingMenusByStrength.sort(by: { $0.createdDate > $1.createdDate })
 //        return trainingMenusByStrength
 //    }
+
     
-//    // 筋トレメニューの追加
-//    func addTrainingMenu(trainingMenuName: String) {
-//        // 追加する筋トレメニューの設定
-//        let trainingMenuModel = TrainingMenuModel()
-//        trainingMenuModel.trainingMenuName = trainingMenuName
-//
-//        // 筋トレメニューの追加
-//        TrainingMenuModel().insertTrainingMenuModel(trainingMenuModel: trainingMenuModel)
-//    }
+    // 入力した負荷量データを追加
+    func insertTrainingLoadData(trainingRecordId: String, trainingLoadModelList: [TrainingLoadModel]) {
+        for trainingLoadModel in trainingLoadModelList {
+            // 筋トレ記録idの設定
+            trainingLoadModel.trainingRecordId = trainingRecordId
+            TrainingLoadModel().insertTrainingLoadData(trainingLoadModel: trainingLoadModel)
+        }
+    }
 //
 //    // 筋トレメニューの削除
 //    func deleteTrainingMenu(trainingMenuModel: TrainingMenuModel) {
