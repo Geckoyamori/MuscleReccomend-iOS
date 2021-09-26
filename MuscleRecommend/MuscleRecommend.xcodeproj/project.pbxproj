@@ -15,6 +15,7 @@
 		6B1B530926C90BCF00022640 /* MuscleRecommendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B530826C90BCF00022640 /* MuscleRecommendTests.swift */; };
 		6B1B531426C90BCF00022640 /* MuscleRecommendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B531326C90BCF00022640 /* MuscleRecommendUITests.swift */; };
 		6B1B536726C9166900022640 /* TrainingMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B536626C9166900022640 /* TrainingMenuModel.swift */; };
+		6B7E093A270029B100895837 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7E0939270029B100895837 /* UIApplication.swift */; };
 		6BD15E8C26C921FB00F4CE66 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD15E8B26C921FB00F4CE66 /* Date.swift */; };
 		6BD15E9E26C9236E00F4CE66 /* TrainingMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD15E9D26C9236E00F4CE66 /* TrainingMenuViewModel.swift */; };
 		6BD15EA826C9271F00F4CE66 /* TrainingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD15EA726C9271F00F4CE66 /* TrainingMenuView.swift */; };
@@ -67,6 +68,7 @@
 		6B1B536626C9166900022640 /* TrainingMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMenuModel.swift; sourceTree = "<group>"; };
 		6B56A3B326C91D1400CAD432 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B56A3B726C91D1800CAD432 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B7E0939270029B100895837 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		6BD15E8B26C921FB00F4CE66 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		6BD15E9D26C9236E00F4CE66 /* TrainingMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMenuViewModel.swift; sourceTree = "<group>"; };
 		6BD15EA726C9271F00F4CE66 /* TrainingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMenuView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				6BD15E8B26C921FB00F4CE66 /* Date.swift */,
 				6BD15EB726C9EBEF00F4CE66 /* TextAlert.swift */,
 				6BD15EE026F895A600F4CE66 /* View.swift */,
+				6B7E0939270029B100895837 /* UIApplication.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				6BD15ED026E50D4A00F4CE66 /* TrainingRecordModel.swift in Sources */,
 				6B1B52F926C90BCE00022640 /* ContentView.swift in Sources */,
 				6B1B536726C9166900022640 /* TrainingMenuModel.swift in Sources */,
+				6B7E093A270029B100895837 /* UIApplication.swift in Sources */,
 				6BD15EC126E49F7200F4CE66 /* TrainingRecordHistoryView.swift in Sources */,
 				6BD15EB826C9EBEF00F4CE66 /* TextAlert.swift in Sources */,
 				6B1B52F726C90BCE00022640 /* MuscleRecommendApp.swift in Sources */,

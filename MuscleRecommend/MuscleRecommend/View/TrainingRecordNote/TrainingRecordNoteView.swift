@@ -10,6 +10,10 @@ import SwiftUI
 // D-003:筋トレ記録のビュー
 struct TrainingRecordNoteView: View {
     
+    // 前画面へ戻るために必要な変数
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    
     // 筋トレメニューid（画面間パラメータ）
     let trainingMenuId: String
     // 筋トレ記録id（画面間パラメータ）
@@ -43,21 +47,21 @@ struct TrainingRecordNoteView: View {
     
     var body: some View {
         
-
-            List {
-                Section(header: Text(SET_TYPE[0])) {
-                    ForEach(1..<(INITIAL_WARMUP_SET + 1)) { index in
-                        TrainingRecordNoteRow(trainingLoadModelList: $warmupTrainingLoadModelList, index: index, trainingSetType: SET_TYPE[0], trainigRecordId: trainigRecordId)
-                    }
-                }
-                Section(header: Text(SET_TYPE[1])) {
-                    ForEach(1..<(INITIAL_MAIN_SET + 1)) { index in
-                        TrainingRecordNoteRow(trainingLoadModelList: $mainTrainingLoadModelList, index: index, trainingSetType: SET_TYPE[1], trainigRecordId: trainigRecordId)
-                    }
+        
+        List {
+            Section(header: Text(SET_TYPE[0])) {
+                ForEach(1..<(INITIAL_WARMUP_SET + 1)) { index in
+                    TrainingRecordNoteRow(trainingLoadModelList: $warmupTrainingLoadModelList, index: index, trainingSetType: SET_TYPE[0], trainigRecordId: trainigRecordId)
                 }
             }
-            .listStyle(GroupedListStyle())
-
+            Section(header: Text(SET_TYPE[1])) {
+                ForEach(1..<(INITIAL_MAIN_SET + 1)) { index in
+                    TrainingRecordNoteRow(trainingLoadModelList: $mainTrainingLoadModelList, index: index, trainingSetType: SET_TYPE[1], trainigRecordId: trainigRecordId)
+                }
+            }
+        }
+        .listStyle(GroupedListStyle())
+        
         
         
         
@@ -69,6 +73,10 @@ struct TrainingRecordNoteView: View {
             }) {
                 Text("保存")
             })
+        // Viewの背景押下時にキーボードを閉じる処理
+        .gesture(TapGesture().onEnded { _ in
+            UIApplication.shared.closeKeyboard()
+        })
     }
     
     // 筋トレ記録保存処理
@@ -87,6 +95,9 @@ struct TrainingRecordNoteView: View {
         
         // ウォームアップ、メインの負荷量を保存
         trainingLoadViewModel.insertTrainingLoadData(trainingRecordId: trainingRecordId, trainingLoadModelList: extractTrainingLoadModelList)
+        
+        // 前画面に戻る
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
@@ -102,9 +113,9 @@ struct TrainingRecordNoteRow: View {
     var trainigRecordId: String
     
     // 筋トレ負荷量の重量
-    @State private var weight: String = String(0)
+    @State private var weight: String = ""
     // 筋トレ負荷量のレップ数
-    @State private var rep: String = String(0)
+    @State private var rep: String = ""
     
     init(trainingLoadModelList: Binding<[TrainingLoadModel]>, index: Int, trainingSetType: String, trainigRecordId: String) {
         self._trainingLoadModelList = trainingLoadModelList
@@ -124,6 +135,8 @@ struct TrainingRecordNoteRow: View {
                     inputRecordNote()
                 }
             })
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .keyboardType(.decimalPad)
             Text("kg")
             Text("×")
             TextField("", text: $rep, onEditingChanged: { isBegin in
@@ -134,6 +147,8 @@ struct TrainingRecordNoteRow: View {
                     inputRecordNote()
                 }
             })
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .keyboardType(.decimalPad)
             Text("reps")
         }
     }
