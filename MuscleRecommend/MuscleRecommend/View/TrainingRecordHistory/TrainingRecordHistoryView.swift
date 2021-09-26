@@ -9,6 +9,9 @@ import SwiftUI
 
 // D-002:筋トレ履歴のビュー
 struct TrainingRecordHistoryView: View {
+    
+    // 筋トレメニューid（画面間パラメータ）
+    let trainingMenuId: String
 
     // 筋トレ記録のビューモデル
     @ObservedObject private var trainingRecordViewModel: TrainingRecordViewModel
@@ -20,25 +23,21 @@ struct TrainingRecordHistoryView: View {
     private var recommendLayoutArray = [StrengthLayout(strength: "高強度", color: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.3043396832)), StrengthLayout(strength: "中強度", color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 0.2987478596)), StrengthLayout(strength: "低強度", color: #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 0.3016641695))]
     
     init(trainingMenuId: String) {
+        self.trainingMenuId = trainingMenuId
+        
         // 筋トレ記録のビューモデル
         trainingRecordViewModel = TrainingRecordViewModel(trainingMenuId: trainingMenuId)
-      
-        // 各強度のレイアウト定義に初回フラグを設定
-        for (index, strengthLayout) in recommendLayoutArray.enumerated() {
-            // 筋トレ強度に紐づく筋トレ記録のリストを最新順で取得
-            let trainingMenusByStrength = trainingRecordViewModel.sortTrainingRecordViewModel(strengthLayout: strengthLayout)
-            // 取得した筋トレ記録のリストから初回フラグを決定
-            recommendLayoutArray[index].setInitialFlag(initialFlag: trainingMenusByStrength.isEmpty)
-        }
     }
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                // 筋トレメニューViewの生成
-                ForEach(recommendLayoutArray, id: \.self) { strengthLayout in
-                    // 各強度のレイアウト定義の初回フラグより、表示する筋トレメニュービューを設定
-                    if strengthLayout.initialFlag {
+        VStack(spacing: 20) {
+            Spacer().frame(height: 20)
+            // 筋トレメニューViewの生成
+            ForEach(recommendLayoutArray, id: \.self) { strengthLayout in
+                // 筋トレメニューView押下時に、D-003に遷移（引数：筋トレメニューid、筋トレ記録id、初回強度）
+                NavigationLink(destination: NavigationLazyView(TrainingRecordNoteView(trainingMenuId: trainingMenuId, trainigRecordId: "", initialStrength: strengthLayout.strength))) {
+                    // 筋トレ強度に紐づく筋トレ記録のリストを最新順で取得した結果より、表示する筋トレメニュービューを設定
+                    if trainingRecordViewModel.sortTrainingRecordViewModel(strengthLayout: strengthLayout).isEmpty {
                         // 初回筋トレメニューViewの生成
                         HStack {
                             Spacer().frame(width: 20)
@@ -46,7 +45,7 @@ struct TrainingRecordHistoryView: View {
                                 .fill(Color(INITIAL_COLOR))
                                 .frame(height: 100)
                             Spacer().frame(width: 20)
-                        }.overlay( Text(String(format: NSLocalizedString(INITIAL_DESCRIPTION, comment: ""), strengthLayout.strength)))
+                        }.overlay(Text(String(format: NSLocalizedString(INITIAL_DESCRIPTION, comment: ""), strengthLayout.strength)).foregroundColor(.primary))
                     } else {
                         // 推奨筋トレメニューViewの生成
                         HStack {
@@ -59,8 +58,39 @@ struct TrainingRecordHistoryView: View {
                     }
                 }
             }
+            Divider()
+            // 筋トレ履歴Viewの作成
+            ForEach(trainingRecordViewModel.trainingRecords, id: \.self) { trainingRecord in
+                // 筋トレ履歴View押下時に、D-003に遷移（引数：筋トレメニューid、筋トレ記録id、初回強度）
+                NavigationLink(destination: NavigationLazyView(TrainingRecordNoteView(trainingMenuId: trainingMenuId, trainigRecordId: trainingRecord.trainingRecordId, initialStrength: trainingRecord.trainingStrength))) {
+                    TrainingRecordHistoryRow(trainingRecord: trainingRecord)
+                }
+            }
+            Spacer()
+        }
+        
+        // ナビゲーションバーの設定
+        .navigationBarTitle("筋トレ記録履歴", displayMode: .inline)
+    }
+}
+
+// 筋トレ履歴ビューの１行を表すView
+struct TrainingRecordHistoryRow: View {
+    
+    // 筋トレ記録モデル
+    var trainingRecord: TrainingRecordModel
+    
+    init(trainingRecord: TrainingRecordModel) {
+        self.trainingRecord = trainingRecord
+    }
+    
+    var body: some View {
+        HStack(spacing: 20) {
+            Text("\(Date().toStringType(date: trainingRecord.createdDate))")
+            Text("\(trainingRecord.trainingStrength)")
         }
     }
+    
 }
 
 // 各強度のレイアウト定義
@@ -70,12 +100,6 @@ struct StrengthLayout: Hashable {
     let strength: String
     // 推奨筋トレメニューViewの色
     let color: UIColor
-    // 初回フラグ（対象筋トレ強度の筋トレメニューが未実施であればtrue）
-    var initialFlag: Bool = true
-    // structであるため、mutatingをつけてプロパティの変更を可能とするメソッドを定義
-    mutating func setInitialFlag(initialFlag: Bool) {
-        self.initialFlag = initialFlag
-    }
     
 }
 

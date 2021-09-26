@@ -56,6 +56,7 @@ struct TrainingMenuView: View {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
+    // 筋トレメニュー削除処理
     func rowRemove(offsets: IndexSet) {
         if let index = offsets.first {
             trainingMenuViewModel.deleteTrainingMenu(trainingMenuModel: trainingMenuViewModel.trainingMenus[index])
